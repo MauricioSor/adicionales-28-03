@@ -1,17 +1,21 @@
-let auto ={
-color:"rojo"
-,marca:"Chevrolet"
-,modelo:2020,
-encender:() =>{
-console.log(auto);
-    encender=alert("Desea encender su auto?");
-document.write("<br>El auto esta encendido");
-}
-,apagar:()=>{
-    apagar=alert("Desea apagar su auto?");
-    document.write("<br>Auto apagado");
-}
+let persona ={
+    nombre:"Mauricio",
+    apellido:"Soria",
+    edad:24,
+    estudiante:true,
+    hobbie:["correr,jugar a la play,estudiar,leer"],
+    mostrar:()=>{
+    for(const property in persona){
+    console.log(`${property}:${persona[property]} `);
+    };
+    },
+    agregarHobbie:(agregar)=>{
+    persona.hobbie.push(agregar);
+    },
+    borrarHobbie:(borrar)=>{
+    delete this.hobbie['borrar'];
+    },
+    buscarHobbie:()=>{
+    
+    },
 };
-auto.encender();
-auto.apagar();
-
