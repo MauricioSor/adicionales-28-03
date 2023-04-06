@@ -70,12 +70,28 @@ tabla += "<tr><td>" + listaProductos[i].nombreProducto + "</td><td>" + listaProd
 }
 tabla += "</tbody></table>";
 
-let tablafiltrada = listaProductos.filter(producto => producto.nombreProducto.includes("Protector solar"));
 let tabla2 = "<table><thead><tr><th>Nombre</th><th>Precio</th><th>Categoria</th></tr></thead><tbody>";
+let tablafiltrada = listaProductos.filter(producto => producto.nombreProducto.includes("Protector solar"));
 for (let i = 0; i< tablafiltrada.length; i++) {
 tabla2 += "<tr><td>" + tablafiltrada[i].nombreProducto + "</td><td>" + tablafiltrada[i].precio + "</td><td>" + tablafiltrada[i].categoria + "</td></tr>";
 }
 tabla2 += "</tbody></table>";
+function tablaFiltrada(x){
+    let tabla3 = "<table><thead><tr><th>Nombre</th><th>Precio</th><th>Categoria</th></tr></thead><tbody>";
+    let tablaBusq = listaProductos.filter(producto => producto.nombreProducto.includes(x));
+    console.log(tablaBusq);
+    if(tablaBusq.length!==0){
+        for (let i = 0; i< tablaBusq.length; i++) {
+            tabla3 += "<tr><td>" + tablaBusq[i].nombreProducto + "</td><td>" + tablaBusq[i].precio + "</td><td>" + tablaBusq[i].categoria + "</td></tr>";
+            }
+            document.write(tabla3);
+    }else{
+        alert(`El producto ingresado no se encuentra disponible en este momento`);
+    }
+}
 
 document.write(tabla);
+document.write(`<br> <h3>Tabla Filtrada</h3>`);
 document.write(tabla2);
+let x = prompt("Ingrese el producto que desea buscar:");
+tablaFiltrada(x);
