@@ -63,15 +63,19 @@ categoria: "Mascaras",
 { nombreProducto: "Agua micellar", 
 precio: 2890, 
 categoria: "Limpieza" },
-mostrar=function(){
-document.write("Producto")
-},
 ];
-var tabla = "<table><thead><tr><th>Nombre</th><th>Edad</th><th>Ciudad</th></tr></thead><tbody>";
-for (var i = 0; i < listaProductos.length; i++) {
+let tabla = "<table><thead><tr><th>Nombre</th><th>Precio</th><th>Categoria</th></tr></thead><tbody>";
+for (let i = 0; i< listaProductos.length; i++) {
 tabla += "<tr><td>" + listaProductos[i].nombreProducto + "</td><td>" + listaProductos[i].precio + "</td><td>" + listaProductos[i].categoria + "</td></tr>";
 }
-
 tabla += "</tbody></table>";
 
+let tablafiltrada = listaProductos.filter(producto => producto.nombreProducto.includes("Protector solar"));
+let tabla2 = "<table><thead><tr><th>Nombre</th><th>Precio</th><th>Categoria</th></tr></thead><tbody>";
+for (let i = 0; i< tablafiltrada.length; i++) {
+tabla2 += "<tr><td>" + tablafiltrada[i].nombreProducto + "</td><td>" + tablafiltrada[i].precio + "</td><td>" + tablafiltrada[i].categoria + "</td></tr>";
+}
+tabla2 += "</tbody></table>";
+
 document.write(tabla);
+document.write(tabla2);
