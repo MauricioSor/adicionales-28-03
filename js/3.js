@@ -63,4 +63,15 @@ categoria: "Mascaras",
 { nombreProducto: "Agua micellar", 
 precio: 2890, 
 categoria: "Limpieza" },
+mostrar=function(){
+document.write("Producto")
+},
 ];
+var tabla = "<table><thead><tr><th>Nombre</th><th>Edad</th><th>Ciudad</th></tr></thead><tbody>";
+for (var i = 0; i < listaProductos.length; i++) {
+tabla += "<tr><td>" + listaProductos[i].nombreProducto + "</td><td>" + listaProductos[i].precio + "</td><td>" + listaProductos[i].categoria + "</td></tr>";
+}
+
+tabla += "</tbody></table>";
+
+document.write(tabla);
